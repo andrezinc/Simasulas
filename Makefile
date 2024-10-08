@@ -4,9 +4,9 @@ FLAGS = -g -c -Wall
 LFLAGS = 
 
 # Source files and object files
-OBJS = main.o pessoa.o
-SOURCE = main.cpp pessoa.cpp
-HEADER = pessoa.h
+OBJS = main.o pessoa.o principal.o
+SOURCE = main.cpp pessoa.cpp principal.cpp
+HEADER = Header/pessoa.h Header/principal.h
 OUT = main
 
 # Libraries

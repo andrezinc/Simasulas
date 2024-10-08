@@ -1,7 +1,4 @@
-#include "pessoa.h"
-
+#include "Header/principal.h"
 int main(){
-		Pessoa pessoa1("andre",2002,12,19);
-		pessoa1.CalculaIdade(3,10,2024);
-		pessoa1.imprime();
+    Principal incio;
 }
