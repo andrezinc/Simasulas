@@ -1,4 +1,4 @@
-#include "Header/principal.h"
+#include "../libs/principal.h"
 #include <iostream>
 	Principal::Principal(){
 		Andre.Inicializa(19,12,2002,"a");

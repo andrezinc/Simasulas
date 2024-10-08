@@ -1,4 +1,4 @@
-#include "Header/principal.h"
+#include "../libs/principal.h"
 int main(){
     Principal incio;
 }

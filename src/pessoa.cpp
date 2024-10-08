@@ -1,4 +1,4 @@
-#include "Header/pessoa.h"
+#include "../libs/pessoa.h"
 #include <iostream>
 Pessoa::Pessoa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
 		Inicializa(anoAtt,mesAtt,diaAtt,nome);
