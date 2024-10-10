@@ -13,7 +13,6 @@ include_directories(include)
 
 # Adicionar arquivos de origem e cabeçalhos
 file(GLOB_RECURSE SOURCES "src/*.cpp")
-file(GLOB_RECURSE HEADERS "libs/*.h")
 
 # Nome e origem do executável
 add_executable(projeto ${SOURCES} ${HEADERS})

@@ -6,6 +6,9 @@ Pessoa::Pessoa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
 Pessoa::Pessoa(){
 	Inicializa();
 }
+Pessoa::~Pessoa(){
+
+}
 void Pessoa::Inicializa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
 		int i=0;
 		for(i=0;*(nome+i)!='\0';i++){ 
@@ -28,7 +31,6 @@ void Pessoa::CalculaIdade(int diaH,int mesH,int anoH){
 					idadeP-=1;
 			}
 		}
-		imprime();
 }
 
 int Pessoa::Get_Idade(){
@@ -36,4 +38,10 @@ int Pessoa::Get_Idade(){
 }
 void Pessoa::imprime(){
 	std::cout<<nomeP<<" tem "<<idadeP<<" anos"<<std::endl;
+}
+void Pessoa::setUnivFiliado(Universidade *pu){
+	pUnivFiliado=pu;
+}
+void Pessoa::OndeEstuda(){
+	std::cout<<nomeP<<" estuda na "<< pUnivFiliado->get_Nome()<<std::endl;
 }
