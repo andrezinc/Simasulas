@@ -9,7 +9,7 @@ class Pessoa{
 			int mesP;
 			int diaP;
 			Universidade *pUnivFiliado;//associação
-
+			Departamento *pDepatFiliado;
 	public:
 			Pessoa(int diaAtt,int mesAtt,int anoAtt,const char *nome="");
 			Pessoa();
@@ -19,5 +19,6 @@ class Pessoa{
 			void CalculaIdade(int diaH=0,int mesH=0,int anoH=0);
 			int Get_Idade();
 			void setUnivFiliado(Universidade *pu);
+			void setDeptFiliado(Departamento *p);
 			void OndeEstuda();
 };

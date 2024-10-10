@@ -14,3 +14,6 @@ void Universidade::setUniversidade(const char *n){
 char *Universidade::get_Nome(){
 		return nomeUniversidadeP;
 }
+void Universidade::setDepartamento(Departamento *dep){
+		Dpto=*dep;
+}

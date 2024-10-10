@@ -9,5 +9,7 @@ void Departamento::setNome(const char *n){
 				nomeDepartamentoP[i]=*(n+i);
 		}
 		nomeDepartamentoP[i]='\0';
-
+}
+char *Departamento::getNome(){
+		return nomeDepartamentoP;
 }
