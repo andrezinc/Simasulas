@@ -873,7 +873,7 @@
 											"top": 383,
 											"width": 268.0078125,
 											"height": 13,
-											"text": "-Dpto: Departamento",
+											"text": "-pDpto: Departamento *",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1013,13 +1013,30 @@
 											"height": 13,
 											"text": "+setDepartamento(dep : Departamento*): void",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGSe8nDVac7UlY=",
+											"_parent": {
+												"$ref": "AAAAAAGSe0uY+vxl7Tk="
+											},
+											"model": {
+												"$ref": "AAAAAAGSe8nDQac42fs="
+											},
+											"font": "Arial;13;0",
+											"left": 789,
+											"top": 483,
+											"width": 268.0078125,
+											"height": 13,
+											"text": "+getNomeDep(): char *",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 784,
 									"top": 401,
 									"width": 278.0078125,
-									"height": 85
+									"height": 100
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1366,8 +1383,8 @@
 								"$ref": "AAAAAAFF+qBtyKM79qY="
 							},
 							"font": "Arial;13;0",
-							"left": 912,
-							"top": 296,
+							"left": 880,
+							"top": 304,
 							"width": 100,
 							"height": 25,
 							"text": "0*.."
@@ -1997,7 +2014,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 904,
+									"left": 905,
 									"top": 617,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2018,7 +2035,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 889,
+									"left": 890,
 									"top": 617,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -2039,7 +2056,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 933,
+									"left": 934,
 									"top": 618,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -2060,8 +2077,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 903,
-									"top": 646,
+									"left": 905,
+									"top": 648,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -2081,8 +2098,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 890,
-									"top": 644,
+									"left": 891,
+									"top": 645,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -2102,8 +2119,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 930,
-									"top": 651,
+									"left": 932,
+									"top": 652,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -2123,8 +2140,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 904,
-									"top": 588,
+									"left": 905,
+									"top": 587,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -2164,7 +2181,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 932,
-									"top": 584,
+									"top": 583,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2208,8 +2225,7 @@
 							"tail": {
 								"$ref": "AAAAAAGSe0zCIvybhbM="
 							},
-							"lineStyle": 1,
-							"points": "918:679;920:569",
+							"points": "920:680;920:568",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGSe5uCtVQWKsA="
@@ -3622,11 +3638,9 @@
 							"_parent": {
 								"$ref": "AAAAAAGSe0uY+vxcwDw="
 							},
-							"name": "Dpto",
+							"name": "pDpto",
 							"visibility": "private",
-							"type": {
-								"$ref": "AAAAAAGSe0zCIvyZ8Cc="
-							}
+							"type": "Departamento *"
 						}
 					],
 					"operations": [
@@ -3726,6 +3740,25 @@
 										"$ref": "AAAAAAGSe4XZPexl8X0="
 									},
 									"type": "void",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGSe8nDQac42fs=",
+							"_parent": {
+								"$ref": "AAAAAAGSe0uY+vxcwDw="
+							},
+							"name": "getNomeDep",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGSe8n7oKfG9iQ=",
+									"_parent": {
+										"$ref": "AAAAAAGSe8nDQac42fs="
+									},
+									"type": "char *",
 									"direction": "return"
 								}
 							]
