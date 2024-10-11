@@ -46,5 +46,5 @@ void Pessoa::setDeptFiliado(Departamento *p){
 	pDepatFiliado=p;
 }
 void Pessoa::OndeEstuda(){
-	std::cout<<nomeP<<" estuda na "<< pUnivFiliado->get_Nome()<<" no "<<pDepatFiliado->getNome()<<std::endl;
+	std::cout<<nomeP<<" estuda na "<< pUnivFiliado->get_Nome()<<" no "<<pUnivFiliado->getNomeDep()<<std::endl;
 }

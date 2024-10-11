@@ -7,6 +7,11 @@
 		UTFPR.setUniversidade("UTFPR");
 		Princeton.setUniversidade("Princeton");
 		Cambridge.setUniversidade("Cambridge");
+		COMORG.setNome("COMORG");
+		ELEG.setNome("ELG");
+		UTFPR.setDepartamento(&DAINF);
+		Princeton.setDepartamento(&COMORG);
+		Cambridge.setDepartamento(&ELEG);
 		Aonaldinho.setUnivFiliado(&Princeton);
 		Mangalhos.setUnivFiliado(&Cambridge);
 		Andre.setUnivFiliado(&UTFPR);

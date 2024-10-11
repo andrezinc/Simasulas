@@ -15,5 +15,8 @@ char *Universidade::get_Nome(){
 		return nomeUniversidadeP;
 }
 void Universidade::setDepartamento(Departamento *dep){
-		Dpto=*dep;
+		Dpto=dep;
+}
+char *Universidade::getNomeDep(){
+	return Dpto->getNome();
 }

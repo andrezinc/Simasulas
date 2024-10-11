@@ -1,7 +1,10 @@
 #include "../libs/departamento.h"
 
 Departamento::Departamento(const char *n){
-		setNome(n);	
+		setNome("");	
+}
+Departamento::~Departamento(){
+
 }
 void Departamento::setNome(const char *n){
 		int i=0;

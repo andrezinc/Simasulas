@@ -9,7 +9,7 @@ class Pessoa{
 			int mesP;
 			int diaP;
 			Universidade *pUnivFiliado;//associação
-			Departamento *pDepatFiliado;
+			Departamento *pDepatFiliado; //associação fraca
 	public:
 			Pessoa(int diaAtt,int mesAtt,int anoAtt,const char *nome="");
 			Pessoa();
