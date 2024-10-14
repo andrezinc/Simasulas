@@ -1,5 +1,6 @@
 #include "../libs/pessoa.h"
 #include <iostream>
+#include <string.h>
 Pessoa::Pessoa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
 		Inicializa(anoAtt,mesAtt,diaAtt,nome);
 }
@@ -10,11 +11,7 @@ Pessoa::~Pessoa(){
 
 }
 void Pessoa::Inicializa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
-		int i=0;
-		for(i=0;*(nome+i)!='\0';i++){ 
-				nomeP[i]=*(nome+i);
-		}
-		nomeP[i]='\0';
+		strcpy(nomeP,nome);
 		anoP=anoAtt;
 		mesP=mesAtt;
 		diaP=diaAtt;
@@ -46,5 +43,5 @@ void Pessoa::setDeptFiliado(Departamento *p){
 	pDepatFiliado=p;
 }
 void Pessoa::OndeEstuda(){
-	std::cout<<nomeP<<" estuda na "<< pUnivFiliado->get_Nome()<<" no "<<pUnivFiliado->getNomeDep()<<std::endl;
+	std::cout<<nomeP<<" estuda na "<< pUnivFiliado->get_Nome()<<" no "<<pDepatFiliado->getNome()<<std::endl;
 }

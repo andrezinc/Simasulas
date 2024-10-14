@@ -7,14 +7,19 @@
 		UTFPR.setUniversidade("UTFPR");
 		Princeton.setUniversidade("Princeton");
 		Cambridge.setUniversidade("Cambridge");
+		DAINF.setNome("DAINF");
 		COMORG.setNome("COMORG");
 		ELEG.setNome("ELG");
-		UTFPR.setDepartamento(&DAINF);
-		Princeton.setDepartamento(&COMORG);
-		Cambridge.setDepartamento(&ELEG);
+		UTFPR.setDepartamento(&COMORG,1);
+		UTFPR.setDepartamento(&DAINF,0);
+		Princeton.setDepartamento(&COMORG,0);
+		Cambridge.setDepartamento(&ELEG,0);
 		Aonaldinho.setUnivFiliado(&Princeton);
 		Mangalhos.setUnivFiliado(&Cambridge);
 		Andre.setUnivFiliado(&UTFPR);
+		Andre.setDeptFiliado(&DAINF);
+		Mangalhos.setDeptFiliado(&ELEG);
+		Aonaldinho.setDeptFiliado(&COMORG);
 		Execute();
 }
 	Principal::~Principal(){
@@ -31,5 +36,6 @@ void Principal::Execute(){
 		Andre.OndeEstuda();
 		Aonaldinho.OndeEstuda();
 		Mangalhos.OndeEstuda();
+		UTFPR.imprime();
 }
 	
