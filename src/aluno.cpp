@@ -7,7 +7,7 @@ Pessoa(diaAtt,mesAtt,anoAtt,nome){
 Aluno::Aluno()
 :Pessoa()
 {
-
+	RA=0;
 }
 Aluno::~Aluno(){
 
