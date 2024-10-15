@@ -1,6 +1,7 @@
 #include "../libs/principal.h"
 #include <iostream>
 	Principal::Principal(){
+		Andrezin.Inicializa(19,12,2002,"Andrezinc");
 		Andre.Inicializa(19,12,2002,"Andre");
 		Aonaldinho.Inicializa(19,12,2001,"Aonaldinho");	
 		Mangalhos.Inicializa(19,12,2000,"Mangalhos");
@@ -10,6 +11,7 @@
 		DAINF.setNome("DAINF");
 		COMORG.setNome("COMORG");
 		ELEG.setNome("ELG");
+		Andrezin.setRa(2659280);
 		UTFPR.setDepartamento(&COMORG,1);
 		UTFPR.setDepartamento(&DAINF,0);
 		Princeton.setDepartamento(&COMORG,0);

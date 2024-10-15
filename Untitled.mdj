@@ -873,7 +873,7 @@
 											"top": 383,
 											"width": 268.0078125,
 											"height": 13,
-											"text": "-pDpto: Departamento *",
+											"text": "-pDpto: Departamento *[50]",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3640,7 +3640,8 @@
 							},
 							"name": "pDpto",
 							"visibility": "private",
-							"type": "Departamento *"
+							"type": "Departamento *",
+							"multiplicity": "50"
 						}
 					],
 					"operations": [
