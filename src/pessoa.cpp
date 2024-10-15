@@ -36,12 +36,3 @@ int Pessoa::Get_Idade(){
 void Pessoa::imprime(){
 	std::cout<<nomeP<<" tem "<<idadeP<<" anos"<<std::endl;
 }
-void Pessoa::setUnivFiliado(Universidade *pu){
-	pUnivFiliado=pu;
-}
-void Pessoa::setDeptFiliado(Departamento *p){
-	pDepatFiliado=p;
-}
-void Pessoa::OndeEstuda(){
-	std::cout<<nomeP<<" estuda na "<< pUnivFiliado->get_Nome()<<" no "<<pDepatFiliado->getNome()<<std::endl;
-}

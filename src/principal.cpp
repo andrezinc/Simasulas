@@ -33,9 +33,9 @@ void Principal::Execute(){
 		Aonaldinho.imprime();
 		Mangalhos.CalculaIdade(diaH,mesH,anoH);
 		Mangalhos.imprime();
-		Andre.OndeEstuda();
-		Aonaldinho.OndeEstuda();
-		Mangalhos.OndeEstuda();
+		Andre.OndeTrabalha();    
+		Aonaldinho.OndeTrabalha();
+		Mangalhos.OndeTrabalha();
 		UTFPR.imprime();
 }
 	
