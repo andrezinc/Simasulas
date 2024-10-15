@@ -12,6 +12,7 @@
 		COMORG.setNome("COMORG");
 		ELEG.setNome("ELG");
 		Andrezin.setRa(2659280);
+		Andrezin.setUniv(&UTFPR);
 		UTFPR.setDepartamento(&COMORG,1);
 		UTFPR.setDepartamento(&DAINF,0);
 		Princeton.setDepartamento(&COMORG,0);
@@ -35,9 +36,11 @@ void Principal::Execute(){
 		Aonaldinho.imprime();
 		Mangalhos.CalculaIdade(diaH,mesH,anoH);
 		Mangalhos.imprime();
+		Andrezin.CalculaIdade(diaH,mesH,anoH);
+		Andrezin.imprime();
 		Andre.OndeTrabalha();    
 		Aonaldinho.OndeTrabalha();
 		Mangalhos.OndeTrabalha();
-		UTFPR.imprime();
+		Andrezin.imprimeEstuda();
 }
 	
