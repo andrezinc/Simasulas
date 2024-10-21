@@ -4,6 +4,7 @@
 #include "departamento.h"
 #include "professor.h"
 #include "aluno.h"
+#include "disciplina.h"
 class Principal{
 	private:
 			int anoH,diaH,mesH;
@@ -17,8 +18,18 @@ class Principal{
 			Departamento DAINF;
 			Departamento COMORG;
 			Departamento ELEG;
+			Disciplina Matematica;
+			Disciplina Algebra;
+			Disciplina Tecnicas;
+			Disciplina Estrutura;
 	public:
 			Principal();
 			~Principal();
+			void InicializaProfessor();
+			void InicializaAluno();
+			void InicializaMateria();
+			void InicializaDepartamento();
+			void InicializaUniversidade();
+			void InicializaAfiliacoes();
 			void Execute();
 };

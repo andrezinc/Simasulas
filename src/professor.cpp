@@ -20,7 +20,7 @@ void Professor::setUnivFiliado(Universidade *pu){
 	pUnivFiliado=pu;
 }
 void Professor::OndeTrabalha(){
-		std::cout<<"Olá sou "<<nomeP<<" Trabalho em "<<pUnivFiliado->get_Nome()<<"no Departamento "<<pDepatFiliado->getNome()<<std::endl;
+		std::cout<<"Olá sou "<<nomeP<<" Trabalho em "<<pUnivFiliado->get_Nome()<<" no Departamento "<<pDepatFiliado->getNome()<<std::endl;
 }
 void Professor::QualDepartamento(){
 		std::cout<<"Deparamento:"<<pDepatFiliado->getNome();

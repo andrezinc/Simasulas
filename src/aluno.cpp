@@ -19,7 +19,7 @@ void Aluno::setUniv(Universidade *p){
 }
 void Aluno::imprimeEstuda(){
 	if(pUnivEstuda!=nullptr)
-		std::cout<<"Andre estuda na"<<pUnivEstuda->get_Nome()<<std::endl;
+		std::cout<<"Andre estuda na "<<pUnivEstuda->get_Nome()<<std::endl;
 }
 int Aluno::getRa(){
 		return RA;
