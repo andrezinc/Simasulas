@@ -3,13 +3,14 @@
 class Universidade{
 	private:
 		char nomeUniversidadeP[50];
-		Departamento *Dpto[50];
 		int pos;
+		Departamento *pDepartPrim;
+		Departamento *pDepartUltim;
 	public:
 		Universidade(const char *n="");
 		~Universidade();
 		void setUniversidade(const char *n);
 		char* get_Nome();	
-		void setDepartamento(Departamento *dep,int pos);
+		void incluiDepartamento(Departamento *dep);
 		void  imprime();
 };

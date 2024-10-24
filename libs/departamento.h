@@ -7,6 +7,8 @@ class Departamento{
 			char nomeDepartamentoP[50];
 			Disciplina *pDiscipPrim;
 			Disciplina *pDiscipUltm;
+			Departamento *pProx;
+			Departamento *pAntes;	
 	public:
 			Departamento(const char* n="");
 			~Departamento();
@@ -17,4 +19,8 @@ class Departamento{
 			void ExcluiDisciplin(Disciplina *pu);
 			void listeDiscplina();
 			void listeDiscplinaTras();
+			void setProx(Departamento *p);
+			void setAntes(Departamento *p);
+			Departamento * getProx();
+			Departamento * getAntes();
 };

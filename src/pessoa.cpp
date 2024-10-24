@@ -33,6 +33,9 @@ void Pessoa::CalculaIdade(int diaH,int mesH,int anoH){
 int Pessoa::Get_Idade(){
 	return idadeP;
 }
+char* Pessoa::getNome(){
+		return nomeP;
+}
 void Pessoa::imprime(){
 	std::cout<<nomeP<<" tem "<<idadeP<<" anos"<<std::endl;
 }

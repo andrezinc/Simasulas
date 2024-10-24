@@ -16,4 +16,5 @@ class Pessoa{
 			void Inicializa(int diaAtt=0,int mesAtt=0,int anoAtt=0,const char *nome="");
 			void CalculaIdade(int diaH=0,int mesH=0,int anoH=0);
 			int Get_Idade();
+			char* getNome();
 };

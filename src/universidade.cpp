@@ -1,12 +1,14 @@
 #include "../libs/universidade.h"
 #include <iostream>
 #include <string.h>
-Universidade::Universidade(const char *n){
-	for(int i=0;i<50;i++)
-			Dpto[i]=nullptr;
+Universidade::Universidade(const char *n):
+pDepartPrim(nullptr)
+,pDepartUltim(nullptr){
 	setUniversidade(n);
 }
 Universidade::~Universidade(){
+pDepartPrim=nullptr;
+pDepartUltim=nullptr;
 }
 void Universidade::setUniversidade(const char *n){
 		strcpy(nomeUniversidadeP,n);
@@ -14,11 +16,22 @@ void Universidade::setUniversidade(const char *n){
 char *Universidade::get_Nome(){
 		return nomeUniversidadeP;
 }
-void Universidade::setDepartamento(Departamento *dep,int pos){
-		Dpto[pos]=dep;
+void Universidade::incluiDepartamento(Departamento *dep){
+		if(pDepartPrim==nullptr){
+				pDepartPrim=dep;
+				pDepartUltim=dep;
+		}
+		else{
+				pDepartUltim->setProx(dep);
+				dep->setAntes(pDepartUltim);
+				pDepartUltim=dep;
+		}
 }
 void Universidade::imprime(){
-	for(int pos=0;pos<50;pos++)
-		if(Dpto[pos]!=nullptr)
-			 std::cout<<Dpto[pos]->getNome()<<std::endl;
+		Departamento *Aux;
+		Aux=pDepartPrim;
+		while(Aux!=nullptr){
+				std::cout<<Aux->getNome()<<std::endl;
+				Aux=Aux->getProx();
+		}
 }

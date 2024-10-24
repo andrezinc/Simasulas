@@ -12,6 +12,9 @@ class Principal{
 			Professor Aonaldinho;
 			Professor Mangalhos;
 			Aluno Andrezin;
+			Aluno AAAAAA;
+			Aluno BBBBBB;
+			Aluno PUTS;
 			Universidade Cambridge;
 			Universidade Princeton;
 			Universidade UTFPR;

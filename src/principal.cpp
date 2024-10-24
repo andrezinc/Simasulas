@@ -35,10 +35,12 @@ void Principal::InicializaProfessor(){
 }
 void Principal::InicializaAfiliacoes(){
 		Andrezin.setUniv(&UTFPR);
-		UTFPR.setDepartamento(&COMORG,1);
-		UTFPR.setDepartamento(&DAINF,0);
-		Princeton.setDepartamento(&COMORG,0);
-		Cambridge.setDepartamento(&ELEG,0);
+		BBBBBB.setUniv(&UTFPR);
+		AAAAAA.setUniv(&UTFPR);
+		UTFPR.incluiDepartamento(&COMORG);
+		UTFPR.incluiDepartamento(&DAINF);
+		Princeton.incluiDepartamento(&COMORG);
+		Cambridge.incluiDepartamento(&ELEG);
 		Aonaldinho.setUnivFiliado(&Princeton);
 		Mangalhos.setUnivFiliado(&Cambridge);
 		Andre.setUnivFiliado(&UTFPR);
@@ -49,6 +51,11 @@ void Principal::InicializaAfiliacoes(){
 		Algebra.setDepartamento(&DAINF);
 		Estrutura.setDepartamento(&DAINF);
 		Tecnicas.setDepartamento(&DAINF);
+		Tecnicas.IncluiAluno(&Andrezin);
+		Tecnicas.IncluiAluno(&AAAAAA);
+		Tecnicas.IncluiAluno(&BBBBBB);
+		Algebra.IncluiAluno(&BBBBBB);
+		Algebra.IncluiAluno(&Andrezin);
 }
 
 void Principal::Execute(){	
@@ -67,5 +74,9 @@ void Principal::Execute(){
 		Andrezin.imprimeEstuda();
 		DAINF.listeDiscplina();
 		DAINF.listeDiscplinaTras();
+		Tecnicas.imprime();
+		Algebra.imprime();
+
 }
+
 	
