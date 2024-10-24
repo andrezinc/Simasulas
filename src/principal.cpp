@@ -13,6 +13,8 @@
 	}
 void Principal::InicializaAluno(){
 		Andrezin.Inicializa(19,12,2002,"Andrezinc");
+		AAAAAA.Inicializa();
+		BBBBBB.Inicializa();
 }
 void Principal::InicializaUniversidade(){
 		UTFPR.setUniversidade("UTFPR");
@@ -76,7 +78,6 @@ void Principal::Execute(){
 		DAINF.listeDiscplinaTras();
 		Tecnicas.imprime();
 		Algebra.imprime();
-
 }
 
 	

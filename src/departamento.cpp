@@ -34,7 +34,7 @@ void Departamento::incluaDiscplin(Disciplina *pd){
 				pDiscipPrim=pd;
 		}
 		else{
-				pDiscipUltm->setpProx(pd);
+				pDiscipUltm->setpAtual(pd);
 				pd->setpAntes(pDiscipUltm);
 				pDiscipUltm=pd;
 		}
@@ -45,7 +45,7 @@ void Departamento::listeDiscplina(){
 		Disciplina* Aux=pDiscipPrim;
 		while(Aux!=nullptr){
 			std::cout<<Aux->getNome()<<std::endl;
-			Aux=Aux->getpProx();
+			Aux=Aux->getpAtual();
 		}
 }
 void Departamento::listeDiscplinaTras(){

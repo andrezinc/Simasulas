@@ -2,26 +2,26 @@
 
 ElAluno::ElAluno():
 alun(nullptr)
-,pPrim(nullptr)
-,pUltim(nullptr){
+,pAntes(nullptr)
+,pProx(nullptr){
 
 }
 ElAluno::~ElAluno(){
 		alun=nullptr;
-		pPrim=nullptr;
-		pUltim=nullptr;
+		pAntes=nullptr;
+		pProx=nullptr;
 }
-void ElAluno::setpPrim(ElAluno *p){
-		pPrim=p;
+void ElAluno::setpAntes(ElAluno *p){
+		pAntes=p;
 }
-ElAluno* ElAluno::getpPrim(){
-		return pPrim;
+ElAluno* ElAluno::getpAntes(){
+		return pAntes;
 }
-void ElAluno::setpUltim(ElAluno *p){
-		pUltim=p;
+void ElAluno::setpProx(ElAluno *p){
+		pProx=p;
 }
-ElAluno* ElAluno::getpUltim(){
-		return pUltim;
+ElAluno* ElAluno::getpProx(){
+		return pProx;
 }
 void ElAluno::setAluno(Aluno *p){
 	alun=p;

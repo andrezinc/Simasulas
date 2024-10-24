@@ -4,9 +4,8 @@
 Disciplina::Disciplina(){
 	id=0;
 	pDetoAsso=nullptr;
-	pProx=nullptr;
 	pAntes=nullptr;
-	pProx=nullptr;
+	pAtual=nullptr;
 	pAntes=nullptr;
 	ElPrim=nullptr;
 	ElUltim=nullptr;
@@ -16,7 +15,7 @@ Disciplina::Disciplina(int i,const char*n){
 		id=i;
 		strcpy(nome,n);
 		pDetoAsso=nullptr;
-		pProx=nullptr;
+		pAtual=nullptr;
 		pAntes=nullptr;
 		ElPrim=nullptr;
 		ElUltim=nullptr;
@@ -25,12 +24,12 @@ Disciplina::~Disciplina(){
 		ElAluno *aux1,*aux2;
 		aux1=ElPrim;
 		while(aux1!=nullptr){
-				aux2=aux1->getpPrim();
+				aux2=aux1->getpProx();
 				delete(aux1);
 				aux1=aux2;
 		}
 		pDetoAsso=nullptr;
-		pProx=nullptr;
+		pAtual=nullptr;
 		pAntes=nullptr;
 		ElPrim=nullptr;
 		ElUltim=nullptr;
@@ -54,8 +53,8 @@ void Disciplina::setDepartamento(Departamento* d){
 Departamento* Disciplina::getDepartamento(){
 		return pDetoAsso;
 }
-void Disciplina::setpProx(Disciplina* d){
-		pProx=d;
+void Disciplina::setpAtual(Disciplina* d){
+		pAtual=d;
 }
 void Disciplina::setpAntes(Disciplina *d){
 		pAntes=d;
@@ -63,28 +62,30 @@ void Disciplina::setpAntes(Disciplina *d){
 Disciplina * Disciplina::getpAntes(){
 		return pAntes;
 }
-Disciplina* Disciplina::getpProx(){
-		return pProx;
+Disciplina* Disciplina::getpAtual(){
+		return pAtual;
 }
 
 void Disciplina::IncluiAluno(Aluno* aluno){
-		ElAluno *Aux=nullptr;
+		ElAluno *Aux;
 		Aux= new ElAluno;
 		Aux->setAluno(aluno);
-		if(ElPrim==nullptr){
-				ElPrim=Aux;
+		if(aluno!=nullptr){
+			if(ElPrim==nullptr){
+					ElPrim=Aux;
+					ElUltim=Aux;
+			}
+			else{
+				ElUltim->setpProx(Aux);	
+				Aux->setpAntes(ElUltim);
 				ElUltim=Aux;
-		}
-		else{
-			ElPrim->setpPrim(Aux);	
-			Aux->setpUltim(ElPrim);
-			ElUltim=Aux;
+			}
 		}
 }
 void Disciplina::imprime(){
 	ElAluno *aux=ElPrim;
 	while(aux!=nullptr){
 		std::cout<<aux->getNome()<<std::endl;
-		aux=ElPrim->getpPrim();
+		aux=aux->getpProx();
 	}
 }

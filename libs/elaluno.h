@@ -2,15 +2,15 @@
 class ElAluno{
 	private:
 			Aluno *alun;
-			ElAluno *pPrim;
-			ElAluno *pUltim;
+			ElAluno *pAntes;
+			ElAluno *pProx;
 	public:
 			ElAluno();
 			~ElAluno();
-			void setpPrim(ElAluno *p);
-			ElAluno* getpPrim();
-			void setpUltim(ElAluno *p);
-			ElAluno* getpUltim();
+			void setpAntes(ElAluno *p);
+			ElAluno* getpAntes();
+			void setpProx(ElAluno *p);
+			ElAluno* getpProx();
 			void setAluno(Aluno *p);
 			Aluno *getAluno();
 			char *getNome();

@@ -7,7 +7,7 @@ class Disciplina{
 			int id;
 			char nome[50];
 			Departamento *pDetoAsso;
-			Disciplina *pProx;
+			Disciplina *pAtual;
 			Disciplina *pAntes;
 			
 			ElAluno *ElPrim;
@@ -22,9 +22,9 @@ class Disciplina{
 			char* getNome();
 			void setDepartamento(Departamento *d);
 			Departamento* getDepartamento();
-			void setpProx(Disciplina *d);
+			void setpAtual(Disciplina *d);
 			void setpAntes(Disciplina *d);
-			Disciplina* getpProx();
+			Disciplina* getpAtual();
 			Disciplina* getpAntes();
 			void IncluiAluno(Aluno* aluno);
 			void imprime();
