@@ -7,8 +7,6 @@ Disciplina::Disciplina(){
 	pAntes=nullptr;
 	pAtual=nullptr;
 	pAntes=nullptr;
-	ElPrim=nullptr;
-	ElUltim=nullptr;
 	setNome("");
 }
 Disciplina::Disciplina(int i,const char*n){
@@ -17,22 +15,11 @@ Disciplina::Disciplina(int i,const char*n){
 		pDetoAsso=nullptr;
 		pAtual=nullptr;
 		pAntes=nullptr;
-		ElPrim=nullptr;
-		ElUltim=nullptr;
 }
 Disciplina::~Disciplina(){
-		ElAluno *aux1,*aux2;
-		aux1=ElPrim;
-		while(aux1!=nullptr){
-				aux2=aux1->getpProx();
-				delete(aux1);
-				aux1=aux2;
-		}
 		pDetoAsso=nullptr;
 		pAtual=nullptr;
 		pAntes=nullptr;
-		ElPrim=nullptr;
-		ElUltim=nullptr;
 }
 void Disciplina::SetId(int i){
 	id=i;
@@ -67,25 +54,8 @@ Disciplina* Disciplina::getpAtual(){
 }
 
 void Disciplina::IncluiAluno(Aluno* aluno){
-		ElAluno *Aux;
-		Aux= new ElAluno;
-		Aux->setAluno(aluno);
-		if(aluno!=nullptr){
-			if(ElPrim==nullptr){
-					ElPrim=Aux;
-					ElUltim=Aux;
-			}
-			else{
-				ElUltim->setpProx(Aux);	
-				Aux->setpAntes(ElUltim);
-				ElUltim=Aux;
-			}
-		}
+		ObjLalunos.adicionar(aluno);
 }
 void Disciplina::imprime(){
-	ElAluno *aux=ElPrim;
-	while(aux!=nullptr){
-		std::cout<<aux->getNome()<<std::endl;
-		aux=aux->getpProx();
-	}
+		ObjLalunos.mostrar_lista();
 }

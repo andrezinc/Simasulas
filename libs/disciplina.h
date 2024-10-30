@@ -1,7 +1,6 @@
 #pragma once
 #include "departamento.h"
-#include "aluno.h"
-#include "elaluno.h"
+#include "listaalunos.h"
 class Disciplina{
 	private:
 			int id;
@@ -9,9 +8,8 @@ class Disciplina{
 			Departamento *pDetoAsso;
 			Disciplina *pAtual;
 			Disciplina *pAntes;
+			ListaAlunos ObjLalunos;
 			
-			ElAluno *ElPrim;
-			ElAluno *ElUltim;
 	public:
 			Disciplina(int i, const char*n="");
 			Disciplina();
