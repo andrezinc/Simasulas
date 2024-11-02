@@ -1,12 +1,7 @@
 #include "../libs/professor.h"
 #include <iostream>
-Professor::Professor(int diaAtt,int mesAtt,int anoAtt,std::string nome):
-Pessoa(diaAtt,mesAtt,anoAtt,nome),
-pUnivFiliado(nullptr),
-pDepatFiliado(nullptr){
-}
-Professor::Professor():
-Pessoa(),
+Professor::Professor(int id,int diaAtt,int mesAtt,int anoAtt,std::string nome):
+Pessoa(id,diaAtt,mesAtt,anoAtt,nome),
 pUnivFiliado(nullptr),
 pDepatFiliado(nullptr){
 }

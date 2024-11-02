@@ -1,7 +1,8 @@
 #include "../libs/universidade.h"
 #include "../libs/listadepartameto.h"
-Universidade::Universidade()
+Universidade::Universidade(int id)
 :ListadeDepartameneto()
+,idP(id)
 {
 		setUniversidade("");
 }
@@ -18,4 +19,7 @@ void Universidade::incluiDepartamento(Departamento *dep){
 }
 void Universidade::imprime(){
 		ListadeDepartameneto.imprimir();
+}
+int Universidade::getId(){
+		return idP;
 }

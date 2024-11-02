@@ -1,7 +1,11 @@
 #include "../libs/principal.h"
 #include <iostream>
 #include <string>
-	Principal::Principal(){
+	Principal::Principal():
+contAluno(0),
+contDisciplina(0),
+contUniversidade(0),
+contDepartamento(0){
 		menu();
 	}
 	Principal::~Principal(){
@@ -10,7 +14,7 @@
 
 void Principal::menu(){
 		int opt=-1;
-		while(opt!=6){
+		while(opt!=8){
 				std::cout << "\033[2J\033[1;1H";
 				std::cout<<"\nEscolha as opcoes:\n";
 				std::cout<<"1- Cadastrar Univ\n";
@@ -18,7 +22,9 @@ void Principal::menu(){
 				std::cout<<"3- Cadastrar Disciplina\n";
 				std::cout<<"4- Cadastrar Aluno\n";
 				std::cout<<"5- Cadastrar Professor\n";
-				std::cout<<"6- Sair\n";
+				std::cout<<"6- Gravar\n";
+				std::cout<<"7- Recuperar\n";
+				std::cout<<"8- Sair\n";
 				std::cin>>opt;
 				switch(opt){
 						case 1:
@@ -31,12 +37,19 @@ void Principal::menu(){
 							cadastraDisc();
 						break;
 						case 4:
-				//			cadastraAluno();
+							cadastraAluno();
 						break;
 						case 5:
 				//			cadastraProfessor();
 						break;	
 						case 6:
+							Gravar();
+							getchar();
+						break;
+						case 7:
+							getchar();
+						break;
+						case 8:
 							std::cout<<"\nFUI\n";
 							getchar();
 						break;
@@ -61,7 +74,7 @@ void Principal::cadastraUni(){
 	std::cin>>opt;
 		switch(opt){
 				case 1:
-						p=new Universidade;
+						p=new Universidade(contUniversidade++);
 						std::cout<<"Qual o nome da universidade:\n";
 						std::cin>>nome;
 						p->setUniversidade(nome);
@@ -120,7 +133,7 @@ void Principal::cadastraDep(){
 	std::cin>>opt;
 		switch(opt){
 				case 1:
-						p=new Departamento;
+						p=new Departamento(contDepartamento++);
 						std::cout<<"Qual o nome do departamento:\n";
 						std::cin>>nome;
 						p->setNome(nome);
@@ -180,7 +193,7 @@ void Principal::cadastraDisc(){
 		std::cin>>opt;
 		switch(opt){
 				case 1:
-						p = new Disciplina;
+						p = new Disciplina(contDisciplina++);
 						std::cout<<"Nome da disciplina:";
 						std::cin>>nome;
 						p->setNome(nome);
@@ -200,3 +213,49 @@ void Principal::cadastraDisc(){
 	}
 }
 
+void Principal::cadastraAluno(){
+	int opt=-1;
+	Aluno *p=nullptr;
+	ElAluno *aux1=nullptr;
+	std::string nome="";
+	while(opt!=5){
+		getchar();
+		std::cout << "\033[2J\033[1;1H";
+		std::cout<<"1- Cadastrar Aluno\n";
+		std::cout<<"2- Associar Disciplinas pro aluno\n";
+		std::cout<<"3- Listar Alunos:\n";
+		std::cout<<"4- Incluir aluno na Discipinas:\n";
+		std::cout<<"5- Sair\n";
+		std::cin>>opt;
+		switch(opt){
+				case 1:
+						p = new Aluno(contAluno++);
+						std::cout<<"Nome do aluno:";
+						std::cin>>nome;
+						p->setNome(nome);
+						ObjtListaAluno.adicionar(p);
+						std::cout<<"\n ok \n";
+						getchar();
+				break;
+				case 3:
+						ObjtListaAluno.mostrar_lista();
+						std::cout<<"\n ok \n";
+						getchar();
+				break;
+				default:
+						std::cout<<"\n nao achei '=' \n";
+						getchar();
+		}
+	}
+}
+void Principal::Gravar(){
+		getchar();
+		char opt='n';
+		std::cout<<"Gostaria de salvar? (s ou n)";
+		std::cin>>opt;
+		if(opt=='s'){
+				ObjtListaUniversidade.gravarUniv();
+		}
+		std::cout<<"Saindo...";
+		getchar();
+}

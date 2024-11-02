@@ -3,9 +3,10 @@
 #include "../libs/disciplina.h"
 #include "../libs/listadisciplina.h"
 #include <string>
-Departamento::Departamento():
+Departamento::Departamento(int id):
 PUuniv(nullptr)
 ,nomeDepartamentoP("")
+,idP(id)
 {
 		plistaDisciplinas= new listaDisciplina();
 }

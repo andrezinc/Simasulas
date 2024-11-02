@@ -5,11 +5,12 @@ class Disciplina;
 class listaDisciplina;
 class Departamento{
 	private:
+			int idP;
 			Universidade *PUuniv;
 			std::string nomeDepartamentoP;
 			listaDisciplina *plistaDisciplinas;
 	public:
-			Departamento();
+			Departamento(int id=-1);
 			~Departamento();
 			void setNome(std::string n="");
 			std::string getNome();

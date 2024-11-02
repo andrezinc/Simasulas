@@ -6,8 +6,7 @@ class Aluno: public Pessoa{
 				int RA;
 				Universidade *pUnivEstuda;
 		public:
-				Aluno(int diaAtt,int mestAtt,int anoAtt,std::string nome="");
-				Aluno();
+				Aluno(int id=-1);
 				~Aluno();
 				void setUniv(Universidade *p);
 				void imprimeEstuda();

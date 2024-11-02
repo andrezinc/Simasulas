@@ -1,17 +1,11 @@
 #include "../libs/aluno.h"
 #include <iostream>
-Aluno::Aluno(int diaAtt,int mesAtt,int anoAtt,std::string nome):
-Pessoa(diaAtt,mesAtt,anoAtt,nome)
+Aluno::Aluno(int id):
+Pessoa(id,0,0,0,"")
 ,RA(0)
 ,pUnivEstuda(nullptr)
 {
 };
-Aluno::Aluno()
-:Pessoa()
-{
-	pUnivEstuda=nullptr;
-	RA=0;
-}
 Aluno::~Aluno(){
 	pUnivEstuda=nullptr;
 }

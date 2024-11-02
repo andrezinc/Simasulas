@@ -11,6 +11,10 @@
 class Principal{
 	private:
 			int anoH,diaH,mesH;
+			int contAluno;
+			int contDisciplina;
+			int contUniversidade;
+			int contDepartamento;
 			ListaAlunos ObjtListaAluno;
 			ListaDepartamento ObjtListaDepartamento;
 			ListaUniversidade ObjtListaUniversidade;
@@ -25,4 +29,6 @@ class Principal{
 			void cadastraAluno();
 			void cadastraProfessor();
 			void Execute();
+			void Gravar();
+			void Recuperar();
 };

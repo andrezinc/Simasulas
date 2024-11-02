@@ -1,5 +1,6 @@
 #include "../libs/listauniversidade.h"
 #include <iostream>
+#include <fstream>
 ListaUniversidade::ListaUniversidade(){
 		prim=nullptr;
 		ultm=nullptr;
@@ -48,4 +49,25 @@ void ListaUniversidade::imprimir(){
 				std::cout<<(aux->getUniv())->get_Nome()<<std::endl;
 				aux=aux->getProx();
 		}
+}
+void ListaUniversidade::gravarUniv()
+{
+std::ofstream GravadorAlunos ( "uni.dat",std::ofstream::app);
+if ( !GravadorAlunos )
+{
+		std::cerr << " Arquivo não pode ser aberto " << std::endl;
+		getchar();
+		return;
+}
+	elUniversidade* pauxElUniv;
+	pauxElUniv = prim;
+	while ( pauxElUniv != NULL)
+	{
+	Universidade* pauxUniv;
+	pauxUniv = pauxElUniv->getUniv();
+		GravadorAlunos << pauxUniv->getId ( ) << ' '
+		<< pauxUniv->get_Nome()<< std::endl;
+		pauxElUniv = pauxElUniv->getProx();
+}
+GravadorAlunos.close ( );
 }

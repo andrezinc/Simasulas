@@ -1,23 +1,12 @@
 #include "../libs/disciplina.h"
 #include <string>
-Disciplina::Disciplina():
-id(0),
-pDetoAsso(nullptr),
-nome(""){
-}
-Disciplina::Disciplina(int i,std::string n){
-		id=i;
-		nome=n;
-		pDetoAsso=nullptr;
+Disciplina::Disciplina(int i):
+idP(i),
+nome(""),
+pDetoAsso(nullptr){
 }
 Disciplina::~Disciplina(){
 		pDetoAsso=nullptr;
-}
-void Disciplina::SetId(int i){
-	id=i;
-}
-int Disciplina::getId(){
-		return id;
 }
 void Disciplina::setNome(std::string n){
 		nome=n;
@@ -37,4 +26,7 @@ void Disciplina::IncluiAluno(Aluno* aluno){
 }
 void Disciplina::imprime(){
 		ObjLalunos.mostrar_lista();
+}
+int Disciplina::getId(){
+		return idP;
 }

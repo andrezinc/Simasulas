@@ -4,20 +4,18 @@
 #include <string>
 class Disciplina{
 	private:
-			int id;
+			int idP;
 			std::string nome;
 			Departamento *pDetoAsso;
 			ListaAlunos ObjLalunos;
 	public:
-			Disciplina(int i, std::string n="");
-			Disciplina();
+			Disciplina(int id=-1);
 			~Disciplina();
-			void SetId(int i);
-			int getId();
 			void setNome(std::string n="");
 			std::string getNome();
 			void setDepartamento(Departamento *d);
 			Departamento* getDepartamento();
 			void IncluiAluno(Aluno* aluno);
 			void imprime();
+			int getId();
 };

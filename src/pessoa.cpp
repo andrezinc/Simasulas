@@ -1,7 +1,10 @@
 #include "../libs/pessoa.h"
 #include <iostream>
-Pessoa::Pessoa(int diaAtt,int mesAtt,int anoAtt,std::string nome){
-		Inicializa(anoAtt,mesAtt,diaAtt,nome);
+Pessoa::Pessoa(int id,int diaAtt,int mesAtt,int anoAtt,std::string nome):
+idP(id),
+diaP(diaAtt),
+anoP(anoAtt),
+nomeP(nome){
 }
 Pessoa::Pessoa(){
 	Inicializa();
@@ -28,7 +31,14 @@ void Pessoa::CalculaIdade(int diaH,int mesH,int anoH){
 			}
 		}
 }
-
+void Pessoa::setAniver(int diaAtt,int mesAtt,int anoAtt){
+		anoP=anoAtt;
+		mesP=mesAtt;
+		diaP=anoAtt;
+}
+void Pessoa::setNome(std::string n){
+		nomeP=n;
+}
 int Pessoa::Get_Idade(){
 	return idadeP;
 }

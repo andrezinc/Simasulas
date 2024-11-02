@@ -12,6 +12,8 @@ class listaDisciplina{
 				void adicionar(Disciplina *disc);
 				void imprimir();
 				int getQnt();
+				void gravarDisc();
+				void recupereDisc();
 				
 
 };

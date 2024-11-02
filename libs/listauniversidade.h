@@ -11,4 +11,6 @@ class ListaUniversidade{
 				void adicionar(Universidade *p);
 				void imprimir();
 				elUniversidade* localizar(std::string n);
+				void gravarUniv();
+				void recuperarUniv();
 };
