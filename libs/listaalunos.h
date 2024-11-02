@@ -12,5 +12,6 @@ class ListaAlunos{
 			void adicionar(Aluno *aluno);
 			void mostrar_lista();
 			int getqntAlunos();
+			ElAluno *localizar(std::string n);
 
 };

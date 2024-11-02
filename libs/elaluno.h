@@ -1,4 +1,6 @@
+#pragma once
 #include "aluno.h"
+
 class ElAluno{
 	private:
 			Aluno *alun;
@@ -13,5 +15,5 @@ class ElAluno{
 			ElAluno* getpProx();
 			void setAluno(Aluno *p);
 			Aluno *getAluno();
-			char *getNome();
+			std::string getNome();
 };

@@ -1,15 +1,15 @@
 #include "../libs/elaluno.h"
 
 ElAluno::ElAluno():
-alun(nullptr)
-,pAntes(nullptr)
-,pProx(nullptr){
+pAntes(nullptr)
+,pProx(nullptr)
+,alun(nullptr){
 
 }
 ElAluno::~ElAluno(){
-		alun=nullptr;
 		pAntes=nullptr;
 		pProx=nullptr;
+		alun=nullptr;
 }
 void ElAluno::setpAntes(ElAluno *p){
 		pAntes=p;
@@ -29,6 +29,6 @@ void ElAluno::setAluno(Aluno *p){
 Aluno* ElAluno::getAluno(){
 		return alun;
 }
-char* ElAluno::getNome(){
+std::string ElAluno::getNome(){
 		return alun->getNome();
 }

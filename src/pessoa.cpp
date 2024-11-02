@@ -1,7 +1,6 @@
 #include "../libs/pessoa.h"
 #include <iostream>
-#include <string.h>
-Pessoa::Pessoa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
+Pessoa::Pessoa(int diaAtt,int mesAtt,int anoAtt,std::string nome){
 		Inicializa(anoAtt,mesAtt,diaAtt,nome);
 }
 Pessoa::Pessoa(){
@@ -10,8 +9,8 @@ Pessoa::Pessoa(){
 Pessoa::~Pessoa(){
 
 }
-void Pessoa::Inicializa(int diaAtt,int mesAtt,int anoAtt,const char *nome){
-		strcpy(nomeP,nome);
+void Pessoa::Inicializa(int diaAtt,int mesAtt,int anoAtt,std::string nome){
+		nomeP=nome;
 		anoP=anoAtt;
 		mesP=mesAtt;
 		diaP=diaAtt;
@@ -33,7 +32,7 @@ void Pessoa::CalculaIdade(int diaH,int mesH,int anoH){
 int Pessoa::Get_Idade(){
 	return idadeP;
 }
-char* Pessoa::getNome(){
+std::string Pessoa::getNome(){
 		return nomeP;
 }
 void Pessoa::imprime(){

@@ -1,25 +1,17 @@
 #include "../libs/disciplina.h"
-#include "string.h"
-#include <iostream>
-Disciplina::Disciplina(){
-	id=0;
-	pDetoAsso=nullptr;
-	pAntes=nullptr;
-	pAtual=nullptr;
-	pAntes=nullptr;
-	setNome("");
+#include <string>
+Disciplina::Disciplina():
+id(0),
+pDetoAsso(nullptr),
+nome(""){
 }
-Disciplina::Disciplina(int i,const char*n){
+Disciplina::Disciplina(int i,std::string n){
 		id=i;
-		strcpy(nome,n);
+		nome=n;
 		pDetoAsso=nullptr;
-		pAtual=nullptr;
-		pAntes=nullptr;
 }
 Disciplina::~Disciplina(){
 		pDetoAsso=nullptr;
-		pAtual=nullptr;
-		pAntes=nullptr;
 }
 void Disciplina::SetId(int i){
 	id=i;
@@ -27,10 +19,10 @@ void Disciplina::SetId(int i){
 int Disciplina::getId(){
 		return id;
 }
-void Disciplina::setNome(const char*n){
-		strcpy(nome,n);
+void Disciplina::setNome(std::string n){
+		nome=n;
 }
-char* Disciplina::getNome(){
+std::string Disciplina::getNome(){
 		return nome;
 }
 void Disciplina::setDepartamento(Departamento* d){
@@ -40,19 +32,6 @@ void Disciplina::setDepartamento(Departamento* d){
 Departamento* Disciplina::getDepartamento(){
 		return pDetoAsso;
 }
-void Disciplina::setpAtual(Disciplina* d){
-		pAtual=d;
-}
-void Disciplina::setpAntes(Disciplina *d){
-		pAntes=d;
-}
-Disciplina * Disciplina::getpAntes(){
-		return pAntes;
-}
-Disciplina* Disciplina::getpAtual(){
-		return pAtual;
-}
-
 void Disciplina::IncluiAluno(Aluno* aluno){
 		ObjLalunos.adicionar(aluno);
 }

@@ -3,9 +3,9 @@
 class Professor : public Pessoa{
 		private:
 			Universidade *pUnivFiliado;//associação
-			Departamento *pDepatFiliado; //associação fraca
+			Departamento *pDepatFiliado; //associação 
 		public:
-			Professor(int diaAtt,int mesAtt,int anoAtt,const char *nome=""); 
+			Professor(int diaAtt,int mesAtt,int anoAtt,std::string nome=""); 
 			Professor();
 			~Professor();
 			void setUnivFiliado(Universidade *pu);

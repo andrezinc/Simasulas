@@ -1,16 +1,15 @@
 #pragma once 
-#include "departamento.h"
+#include "listadepartameto.h"
 class Universidade{
 	private:
-		char nomeUniversidadeP[50];
+		std::string nomeUniversidadeP;
 		int pos;
-		Departamento *pDepartPrim;
-		Departamento *pDepartUltim;
+		ListaDepartamento ListadeDepartameneto; 
 	public:
-		Universidade(const char *n="");
+		Universidade();
 		~Universidade();
-		void setUniversidade(const char *n);
-		char* get_Nome();	
+		void setUniversidade(std::string n);
+		std::string get_Nome();	
 		void incluiDepartamento(Departamento *dep);
 		void  imprime();
 };

@@ -1,13 +1,12 @@
 #pragma once 
 #include "pessoa.h"
+#include <string>
 class Aluno: public Pessoa{
 		private:
 				int RA;
 				Universidade *pUnivEstuda;
-				Aluno *prox;
-				Aluno *anterior;
 		public:
-				Aluno(int diaAtt,int mestAtt,int anoAtt,const char*nome="");
+				Aluno(int diaAtt,int mestAtt,int anoAtt,std::string nome="");
 				Aluno();
 				~Aluno();
 				void setUniv(Universidade *p);

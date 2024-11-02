@@ -18,7 +18,7 @@ ListaAlunos::~ListaAlunos(){
 void ListaAlunos::adicionar(Aluno *aluno){
 		if(aluno!=nullptr){
 				ElAluno *ptr=nullptr;
-				ptr=new ElAluno;
+				ptr=new ElAluno();
 				ptr->setAluno(aluno);
 				if(elPrim==nullptr){
 						elPrim=ptr;
@@ -26,7 +26,7 @@ void ListaAlunos::adicionar(Aluno *aluno){
 				}
 				else{
 					elUltim->setpProx(ptr);
-					ptr->setpAntes(ptr);
+					ptr->setpAntes(elUltim);
 					elUltim=ptr;
 				}
 				qntAlunos++;
@@ -35,11 +35,22 @@ void ListaAlunos::adicionar(Aluno *aluno){
 void ListaAlunos::mostrar_lista(){
 		ElAluno *aux;
 		aux=elPrim;
-		while(aux==nullptr){
+		while(aux!=nullptr){
 				std::cout<<aux->getNome()<<std::endl;
 				aux=aux->getpProx();
 		}
 }
 int ListaAlunos::getqntAlunos(){
 		return qntAlunos;
+}
+
+ElAluno *ListaAlunos::localizar(std::string n){
+		ElAluno *aux=elPrim;
+		while(aux!=nullptr){
+				if((aux->getAluno())->getNome()==n){
+						return aux;
+				}
+			aux=aux->getpProx();
+		}
+		return nullptr;
 }
