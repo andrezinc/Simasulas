@@ -1,5 +1,6 @@
 #include "../libs/listaalunos.h"
 #include <iostream>
+#include <fstream>
 ListaAlunos::ListaAlunos()
 :elPrim(nullptr),elUltim(nullptr),qntAlunos(0){
 }
@@ -53,4 +54,48 @@ ElAluno *ListaAlunos::localizar(std::string n){
 			aux=aux->getpProx();
 		}
 		return nullptr;
+}
+void ListaAlunos::GravarAluno(){
+std::ofstream GravadorAluno( "aluno.dat",std::ofstream::app);
+if ( !GravadorAluno)
+{
+		std::cerr << " Arquivo não pode ser aberto " << std::endl;
+		getchar( );
+		return;
+}
+	ElAluno* pauxElAluno;
+	pauxElAluno = elPrim;
+	while ( pauxElAluno!= NULL)
+	{
+	Aluno* pauxAluno;
+	pauxAluno = pauxElAluno->getAluno();
+		GravadorAluno<< pauxAluno->GetId() << ' '
+		<< pauxAluno->getNome()<< std::endl;
+		pauxElAluno = pauxElAluno->getpProx();
+	}
+}
+void ListaAlunos::RecuperarAluno( )
+{
+		std::ifstream RecuperadorAluno( "aluno.dat", std::ios::in );
+		if ( !RecuperadorAluno)
+		{
+			std::cerr << " Arquivo não pode ser aberto " << std::endl;
+			fflush ( stdin );
+			getchar( );
+			}
+				while ( !RecuperadorAluno.eof ( ) )
+				{
+				Aluno* pauxAluno;
+				int id;
+				std::string nome;
+				RecuperadorAluno >> id >> nome;
+					if ( nome!="" )
+					{
+						pauxAluno = new Aluno( -1 );
+						pauxAluno->setId( id );
+						pauxAluno->setNome ( nome );
+						adicionar( pauxAluno );
+					}
+				}
+	RecuperadorAluno.close ( );
 }

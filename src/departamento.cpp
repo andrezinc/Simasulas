@@ -22,6 +22,12 @@ void Departamento::setNome(std::string n)
 std::string Departamento::getNome(){
 		return nomeDepartamentoP;
 }
+int Departamento::getId(){
+		return idP;
+}
+void Departamento::setId(int id){
+		idP=id;
+}
 void Departamento::setUniv(Universidade *pu){
 		PUuniv=pu;
 }

@@ -18,6 +18,7 @@ void Pessoa::Inicializa(int diaAtt,int mesAtt,int anoAtt,std::string nome){
 		mesP=mesAtt;
 		diaP=diaAtt;
 		idadeP=-1;
+		idP=-1;
 }
 void Pessoa::CalculaIdade(int diaH,int mesH,int anoH){
 		idadeP=anoH-anoP;
@@ -38,6 +39,12 @@ void Pessoa::setAniver(int diaAtt,int mesAtt,int anoAtt){
 }
 void Pessoa::setNome(std::string n){
 		nomeP=n;
+}
+void Pessoa::setId(int id){
+		idP=id;
+}
+int Pessoa::GetId(){
+		return idP;
 }
 int Pessoa::Get_Idade(){
 	return idadeP;

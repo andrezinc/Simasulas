@@ -30,3 +30,6 @@ void Disciplina::imprime(){
 int Disciplina::getId(){
 		return idP;
 }
+void Disciplina::setId(int id){
+		idP=id;
+}

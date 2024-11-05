@@ -13,5 +13,7 @@ class ListaAlunos{
 			void mostrar_lista();
 			int getqntAlunos();
 			ElAluno *localizar(std::string n);
+			void GravarAluno();
+			void RecuperarAluno();
 
 };

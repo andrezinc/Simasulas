@@ -14,6 +14,8 @@ class Departamento{
 			~Departamento();
 			void setNome(std::string n="");
 			std::string getNome();
+			void setId(int id);
+			int getId();
 			void setUniv(Universidade *pu);
 			void incluaDiscplin(Disciplina* pd);
 			void listeDiscplina();

@@ -85,10 +85,9 @@ void listaDisciplina::recupereDisc( )
 					if ( nome!="" )
 					{
 						pauxDisc = new Disciplina( -1 );
-						pauxDisc-> ( id );
-						pauxDisc->setRA ( RA );
+						pauxDisc->setId( id );
 						pauxDisc->setNome ( nome );
-						incluaAluno ( pauxDisc );
+						adicionar( pauxDisc );
 					}
 				}
 	RecuperadorDisc.close ( );

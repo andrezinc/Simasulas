@@ -52,8 +52,8 @@ void ListaUniversidade::imprimir(){
 }
 void ListaUniversidade::gravarUniv()
 {
-std::ofstream GravadorAlunos ( "uni.dat",std::ofstream::app);
-if ( !GravadorAlunos )
+std::ofstream GravadorUniv( "uni.dat",std::ofstream::app);
+if ( !GravadorUniv)
 {
 		std::cerr << " Arquivo não pode ser aberto " << std::endl;
 		getchar();
@@ -65,9 +65,32 @@ if ( !GravadorAlunos )
 	{
 	Universidade* pauxUniv;
 	pauxUniv = pauxElUniv->getUniv();
-		GravadorAlunos << pauxUniv->getId ( ) << ' '
+		GravadorUniv<< pauxUniv->getId ( ) << ' '
 		<< pauxUniv->get_Nome()<< std::endl;
 		pauxElUniv = pauxElUniv->getProx();
 }
-GravadorAlunos.close ( );
+GravadorUniv.close ( );
+}
+void ListaUniversidade::recuperarUniv()
+{
+std::ifstream RecuperarUniv( "uni.dat",std::ofstream::in);
+if ( !RecuperarUniv)
+{
+		std::cerr << " Arquivo não pode ser aberto " << std::endl;
+		getchar();
+		return;
+}
+while(!RecuperarUniv.eof()){
+		Universidade *pauxUniv;
+		int id;
+		std::string nome;
+		RecuperarUniv>>id>>nome;
+		if(nome!=""){
+						pauxUniv= new Universidade(-1);
+						pauxUniv->setId(id);
+						pauxUniv->setUniversidade(nome);
+						adicionar(pauxUniv);
+						}
+}
+RecuperarUniv.close ( );
 }

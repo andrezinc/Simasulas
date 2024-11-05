@@ -1,5 +1,6 @@
 #include "../libs/listadepartameto.h"
 #include <iostream>
+#include <fstream>
 ListaDepartamento::ListaDepartamento():
 prim(nullptr),
 ultm(nullptr){
@@ -51,4 +52,50 @@ ElDepartamento *ListaDepartamento::localizar(std::string n){
 			aux=aux->GetProx();
 		}
 		return nullptr;
+}
+void ListaDepartamento::gravarDep()
+{
+std::ofstream GravadorDep( "dep.dat",std::ofstream::app);
+if ( !GravadorDep)
+{
+		std::cerr << " Arquivo não pode ser aberto " << std::endl;
+		getchar( );
+		return;
+}
+	ElDepartamento* pauxElDep;
+	pauxElDep = prim;
+	while ( pauxElDep!= NULL)
+	{
+	Departamento* pauxDep;
+	pauxDep = pauxElDep->GetDepatamento();
+		GravadorDep<< pauxDep->getId( ) << ' '
+		<< pauxDep->getNome()<< std::endl;
+		pauxElDep = pauxElDep->GetProx();
+}
+GravadorDep.close ( );
+}
+void ListaDepartamento::recuperarDep( )
+{
+		std::ifstream RecuperadorDep( "dep.dat", std::ios::in );
+		if ( !RecuperadorDep)
+		{
+			std::cerr << " Arquivo não pode ser aberto " << std::endl;
+			fflush ( stdin );
+			getchar( );
+			}
+				while ( !RecuperadorDep.eof ( ) )
+				{
+				Departamento* pauxDep;
+				int id;
+				std::string nome;
+				RecuperadorDep >> id >> nome;
+					if ( nome!="" )
+					{
+						pauxDep = new Departamento( -1 );
+						pauxDep->setId( id );
+						pauxDep->setNome ( nome );
+						adicionar( pauxDep );
+					}
+				}
+	RecuperadorDep.close ( );
 }

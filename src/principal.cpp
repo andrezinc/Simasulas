@@ -47,6 +47,7 @@ void Principal::menu(){
 							getchar();
 						break;
 						case 7:
+							Recuperar();
 							getchar();
 						break;
 						case 8:
@@ -254,7 +255,24 @@ void Principal::Gravar(){
 		std::cout<<"Gostaria de salvar? (s ou n)";
 		std::cin>>opt;
 		if(opt=='s'){
+				ObjListaDisciplina.gravarDisc();
+				ObjtListaDepartamento.gravarDep();
 				ObjtListaUniversidade.gravarUniv();
+				ObjtListaAluno.GravarAluno();
+		}
+		std::cout<<"Saindo...";
+		getchar();
+}
+void Principal::Recuperar(){
+		getchar();
+		char opt='n';
+		std::cout<<"Gostaria de recuperar? (s ou n)";
+		std::cin>>opt;
+		if(opt=='s'){
+				ObjListaDisciplina.recupereDisc();
+				ObjtListaDepartamento.recuperarDep();
+				ObjtListaAluno.RecuperarAluno();
+				ObjtListaUniversidade.recuperarUniv();
 		}
 		std::cout<<"Saindo...";
 		getchar();

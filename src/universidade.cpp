@@ -20,6 +20,9 @@ void Universidade::incluiDepartamento(Departamento *dep){
 void Universidade::imprime(){
 		ListadeDepartameneto.imprimir();
 }
+void Universidade::setId(int id){
+		idP=id;
+}
 int Universidade::getId(){
 		return idP;
 }
