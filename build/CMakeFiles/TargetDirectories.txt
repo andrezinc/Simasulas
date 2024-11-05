@@ -1,3 +1,0 @@
-/home/andre/Simasulas/build/CMakeFiles/projeto.dir
-/home/andre/Simasulas/build/CMakeFiles/edit_cache.dir
-/home/andre/Simasulas/build/CMakeFiles/rebuild_cache.dir
